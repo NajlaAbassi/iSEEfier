@@ -9,7 +9,7 @@ representing panels as nodes and links between them as edges."></head><body>
 
     <a class="navbar-brand me-2" href="../index.html">iSEEfier</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.5.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.9.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -91,9 +91,19 @@ provided in this package.</p>
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co">## Load a dataset and preprocess this quickly</span></span></span>
 <span class="r-in"><span><span class="va">sce</span> <span class="op">&lt;-</span> <span class="fu">scRNAseq</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/scRNAseq/man/RichardTCellData.html" class="external-link">RichardTCellData</a></span><span class="op">(</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> snapshotDate(): 2025-04-08</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> snapshotDate(): 2026-07-24</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Error while performing HEAD request.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>    Proceeding without cache information.</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> loading from cache</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Error while performing HEAD request.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>    Proceeding without cache information.</span>
 <span class="r-in"><span><span class="va">sce</span> <span class="op">&lt;-</span> <span class="fu">scuttle</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/scuttle/man/logNormCounts.html" class="external-link">logNormCounts</a></span><span class="op">(</span><span class="va">sce</span><span class="op">)</span></span></span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>'librarySizeFactors' is deprecated.</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> Use 'scrapper::centerSizeFactors' instead.</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> See help("Deprecated")</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>'normalizeCounts' is deprecated.</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> Use 'scrapper::normalizeCounts' instead.</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> See help("Deprecated")</span>
 <span class="r-in"><span><span class="va">sce</span> <span class="op">&lt;-</span> <span class="fu">scater</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/BiocSingular/man/runPCA.html" class="external-link">runPCA</a></span><span class="op">(</span><span class="va">sce</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">sce</span> <span class="op">&lt;-</span> <span class="fu">scater</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/scater/man/runTSNE.html" class="external-link">runTSNE</a></span><span class="op">(</span><span class="va">sce</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="co">## Select some features and aspects to focus on</span></span></span>
@@ -108,18 +118,18 @@ provided in this package.</p>
 <span class="r-in"><span><span class="va">g_init</span> <span class="op">&lt;-</span> <span class="fu">view_initial_network</span><span class="op">(</span><span class="va">initial</span><span class="op">)</span></span></span>
 <span class="r-plt img"><img src="view_initial_network-1.png" alt="" width="700" height="433"></span>
 <span class="r-in"><span><span class="va">g_init</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> IGRAPH 0459bbb DN-- 13 4 -- </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> IGRAPH 85adfa7 DN-- 13 4 -- </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> + attr: name (v/c), color (v/c)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> + edges from 0459bbb (vertex names):</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> + edges from 85adfa7 (vertex names):</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] ReducedDimensionPlot1-&gt;ColumnDataPlot1  </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [2] ReducedDimensionPlot2-&gt;ColumnDataPlot1  </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [3] ReducedDimensionPlot3-&gt;ColumnDataPlot1  </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [4] ReducedDimensionPlot4-&gt;FeatureAssayPlot4</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">view_initial_network</span><span class="op">(</span><span class="va">initial</span>, plot_format <span class="op">=</span> <span class="st">"visNetwork"</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> IGRAPH 6f1b8f7 DN-- 13 4 -- </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> IGRAPH 646a90d DN-- 13 4 -- </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> + attr: name (v/c), color (v/c)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> + edges from 6f1b8f7 (vertex names):</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> + edges from 646a90d (vertex names):</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] ReducedDimensionPlot1-&gt;ColumnDataPlot1  </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [2] ReducedDimensionPlot2-&gt;ColumnDataPlot1  </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [3] ReducedDimensionPlot3-&gt;ColumnDataPlot1  </span>
@@ -140,7 +150,7 @@ provided in this package.</p>
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.0.</p>
 </div>
 
     </footer></div>
