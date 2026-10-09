@@ -29,6 +29,7 @@ Useful links:
 
 Authors:
 \itemize{
+  \item Najla Abassi \email{abassi.nejla96@gmail.com} (\href{https://orcid.org/0000-0001-8357-0938}{ORCID})
   \item Federico Marini \email{marinif@uni-mainz.de} (\href{https://orcid.org/0000-0003-3252-7758}{ORCID})
 }
 
