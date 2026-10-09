@@ -96,8 +96,8 @@ sce
 Let's add the normalized counts
 
 ```{r logNorm}
-library("scuttle")
-sce <- logNormCounts(sce)
+library("scrapper")
+sce <- normalizeRnaCounts.se(sce)
 ```
 
 Now we can add different dimensionality reduction coordinates
