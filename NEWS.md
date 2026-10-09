@@ -1,3 +1,9 @@
+# iSEEfier 1.10.0
+
+* Adding a new function `iSEEdea()`, more focused on exploring DEA results,
+either provided as a list along with the `sce` object or fetched from the dea slot
+of a `DeeDeeExperiment` object
+
 # iSEEfier 1.2.0
 
 * Adding in a new function `iSEEmarker()`, more focused on finding marker genes
