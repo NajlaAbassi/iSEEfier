@@ -24,7 +24,7 @@
 #'
 #' @importFrom stats na.omit
 #' @importFrom ggplot2 ggplot aes geom_tile scale_fill_manual scale_y_discrete
-#' theme theme_void
+#'  theme theme_void
 #' @importFrom rlang .data
 #' @importFrom BiocBaseUtils isCharacter
 #'
@@ -395,6 +395,8 @@ glue_initials <- function(...,
 #' Constant values used throughout iSEEfier
 #'
 #' @name constants-iSEEfier
+#' @return A character vector of length 17 containing color values used for
+#' iSEE and iSEEu panels
 #'
 #' @section Panel colors:
 #' * color values (as string character or hex value) for the panels included by
