@@ -33,7 +33,7 @@
 #' @examples
 #' ## Load a dataset and preprocess this quickly
 #' sce <- scRNAseq::RichardTCellData()
-#' sce <- scuttle::logNormCounts(sce)
+#' sce <- scrapper::normalizeRnaCounts.se(sce)
 #' sce <- scater::runPCA(sce)
 #' sce <- scater::runTSNE(sce)
 #' ## Select some features and aspects to focus on
@@ -178,7 +178,7 @@ view_initial_tiles <- function(initial) {
 #' @examples
 #' ## Load a dataset and preprocess this quickly
 #' sce <- scRNAseq::RichardTCellData()
-#' sce <- scuttle::logNormCounts(sce)
+#' sce <- scrapper::normalizeRnaCounts.se(sce)
 #' sce <- scater::runPCA(sce)
 #' sce <- scater::runTSNE(sce)
 #' ## Select some features and aspects to focus on
@@ -296,7 +296,7 @@ view_initial_network <- function(initial,
 #' @examples
 #' ## Load a dataset and preprocess this quickly
 #' sce <- scRNAseq::RichardTCellData()
-#' sce <- scuttle::logNormCounts(sce)
+#' sce <- scrapper::normalizeRnaCounts.se(sce)
 #' sce <- scater::runPCA(sce)
 #' sce <- scater::runTSNE(sce)
 #' ## Select some features and aspects to focus on

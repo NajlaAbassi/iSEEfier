@@ -32,7 +32,7 @@
 #'
 #' @examples
 #' sce <- scRNAseq::RichardTCellData()
-#' sce <- scuttle::logNormCounts(sce)
+#' sce <- scrapper::normalizeRnaCounts.se(sce)
 #' sce <- scater::runPCA(sce)
 #' GO_collection <- "GO"
 #' Mm_organism <- "org.Mm.eg.db"
