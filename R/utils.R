@@ -170,7 +170,7 @@ view_initial_tiles <- function(initial) {
 #'
 #' @export
 #'
-#' @importFrom igraph graph_from_data_frame graph.empty V V<-
+#' @importFrom igraph graph_from_data_frame make_empty_graph V V<-
 #' @importFrom visNetwork visNetwork visEdges toVisNetworkData
 #'
 #' @seealso [view_initial_tiles()]
@@ -233,7 +233,7 @@ view_initial_network <- function(initial,
     )
     g <- graph_from_data_frame(graph_edges_df, vertices = graph_nodes_df)
   } else {
-    g <- graph.empty(n = length(panel_ids))
+    g <- make_empty_graph(n = length(panel_ids))
     V(g)$name <- panel_ids
   }
 
