@@ -38,7 +38,7 @@ the expression of selected marker genes
 }
 \examples{
 sce <- scRNAseq::RichardTCellData()
-sce <- scuttle::logNormCounts(sce)
+sce <- scrapper::normalizeRnaCounts.se(sce)
 sce <- scater::runPCA(sce)
 sce <- scater::runTSNE(sce)
 cluster <- "stimulus"
