@@ -23,7 +23,7 @@ vignette: >
   %\VignettePackage{iSEEfier}
 
 ---
-```{r, include = FALSE}
+```{r knitr, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
@@ -310,6 +310,6 @@ Request on GitHub.
 
 # Session info {.unnumbered}
 
-```{r}
+```{r sessioinfo}
 sessionInfo()
 ```
