@@ -132,7 +132,7 @@ iSEEinit <- function(sce,
   initial <- list()
   
   
-  for (j in 1:NROW(features)) {
+  for (j in seq_len(NROW(features))) {
     feature_name <- if (is.data.frame(features)) features[j, ] else features[[j]]
     initial[[paste0("ReducedDimensionPlot", j)]] <- new(
       "ReducedDimensionPlot",
