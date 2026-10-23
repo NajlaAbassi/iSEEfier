@@ -48,7 +48,9 @@ Inter- and Intra-cell Population Structure", published in Cell Systems in 2016.
 The data is made available via the `r BiocStyle::Biocpkg("scRNAseq")`
 Bioconductor package. We'll simply use the mouse dataset, consisting of islets
 isolated from five C57BL/6 and ICR mice.
+
 # Getting started {#gettingstarted}
+
 To install `r BiocStyle::Biocpkg("iSEEfier")` package, we start R and enter:
 
 ```{r install, eval=FALSE}
