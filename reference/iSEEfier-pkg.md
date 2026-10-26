@@ -24,5 +24,8 @@ Useful links:
 
 Authors:
 
+- Najla Abassi <abassi.nejla96@gmail.com>
+  ([ORCID](https://orcid.org/0000-0001-8357-0938))
+
 - Federico Marini <marinif@uni-mainz.de>
   ([ORCID](https://orcid.org/0000-0003-3252-7758))

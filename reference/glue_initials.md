@@ -70,21 +70,9 @@ nevertheless, most users might not even need to face this situation.
 ``` r
 ## Load a dataset and preprocess this quickly
 sce <- scRNAseq::RichardTCellData()
-#> 
-#> snapshotDate(): 2026-07-24
-#> Error while performing HEAD request.
-#>    Proceeding without cache information.
+#> snapshotDate(): 2026-09-18
 #> loading from cache
-#> require("ensembldb")
-#> Error while performing HEAD request.
-#>    Proceeding without cache information.
-sce <- scuttle::logNormCounts(sce)
-#> Warning: 'librarySizeFactors' is deprecated.
-#> Use 'scrapper::centerSizeFactors' instead.
-#> See help("Deprecated")
-#> Warning: 'normalizeCounts' is deprecated.
-#> Use 'scrapper::normalizeCounts' instead.
-#> See help("Deprecated")
+sce <- scrapper::normalizeRnaCounts.se(sce)
 sce <- scater::runPCA(sce)
 sce <- scater::runTSNE(sce)
 ## Select some features and aspects to focus on

@@ -2,7 +2,7 @@
 
 ![](inst/www/iSEEfier.png)
 
-  
+\
 
 The goal of `iSEEfier` is to provides a set of functionality to quickly
 and intuitively create, inspect, and combine initial configuration
@@ -24,7 +24,18 @@ any panel developed independently by the user).
 
 ## Installation
 
-You can install the development version of `iSEEfier` from GitHub with:
+You can install the release version of `iSEEfier` from Bioconductor
+with:
+
+``` r
+
+if (!requireNamespace("BiocManager", quietly = TRUE)) {
+  install.packages("BiocManager")}
+
+BiocManager::install("iSEEfier")
+```
+
+and the development version from GitHub with:
 
 ``` r
 
@@ -44,7 +55,7 @@ library(iSEEfier)
 library(iSEE)
 
 sce <- scRNAseq::RichardTCellData()
-sce <- scuttle::logNormCounts(sce)
+sce <- scrapper::normalizeRnaCounts.se(sce)
 sce <- scater::runPCA(sce)
 sce <- scater::runTSNE(sce)
 

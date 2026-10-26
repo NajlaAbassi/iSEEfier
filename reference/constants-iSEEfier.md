@@ -8,9 +8,10 @@ Constant values used throughout iSEEfier
 iSEE_panel_colors
 ```
 
-## Format
+## Value
 
-An object of class `character` of length 17.
+A character vector of length 17 containing color values used for iSEE
+and iSEEu panels
 
 ## Panel colors
 

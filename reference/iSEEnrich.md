@@ -61,19 +61,9 @@ A list of "Panel" objects specifying the initial state of iSEE instance
 
 ``` r
 sce <- scRNAseq::RichardTCellData()
-#> snapshotDate(): 2026-07-24
-#> Error while performing HEAD request.
-#>    Proceeding without cache information.
+#> snapshotDate(): 2026-09-18
 #> loading from cache
-#> Error while performing HEAD request.
-#>    Proceeding without cache information.
-sce <- scuttle::logNormCounts(sce)
-#> Warning: 'librarySizeFactors' is deprecated.
-#> Use 'scrapper::centerSizeFactors' instead.
-#> See help("Deprecated")
-#> Warning: 'normalizeCounts' is deprecated.
-#> Use 'scrapper::normalizeCounts' instead.
-#> See help("Deprecated")
+sce <- scrapper::normalizeRnaCounts.se(sce)
 sce <- scater::runPCA(sce)
 GO_collection <- "GO"
 Mm_organism <- "org.Mm.eg.db"
@@ -88,5 +78,4 @@ results <- iSEEnrich(sce = sce,
                      clusters = clusters,
                      groups = groups,
                      reddim_type = reddim_type)
-#> 
 ```

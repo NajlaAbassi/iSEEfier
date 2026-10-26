@@ -62,19 +62,9 @@ A list of "Panel" objects specifying the initial state of iSEE instance
 
 ``` r
 sce <- scRNAseq::RichardTCellData()
-#> snapshotDate(): 2026-07-24
-#> Error while performing HEAD request.
-#>    Proceeding without cache information.
+#> snapshotDate(): 2026-09-18
 #> loading from cache
-#> Error while performing HEAD request.
-#>    Proceeding without cache information.
-sce <- scuttle::logNormCounts(sce)
-#> Warning: 'librarySizeFactors' is deprecated.
-#> Use 'scrapper::centerSizeFactors' instead.
-#> See help("Deprecated")
-#> Warning: 'normalizeCounts' is deprecated.
-#> Use 'scrapper::normalizeCounts' instead.
-#> See help("Deprecated")
+sce <- scrapper::normalizeRnaCounts.se(sce)
 sce <- scater::runPCA(sce)
 sce <- scater::runTSNE(sce)
 gene_list <- c("ENSMUSG00000026581",

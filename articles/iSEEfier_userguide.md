@@ -17,10 +17,12 @@ in Cell Systems in 2016.
 The data is made available via the
 *[scRNAseq](https://bioconductor.org/packages/3.24/scRNAseq)*
 Bioconductor package. We’ll simply use the mouse dataset, consisting of
-islets isolated from five C57BL/6 and ICR mice. \# Getting started
-{#gettingstarted} To install
-*[iSEEfier](https://bioconductor.org/packages/3.24/iSEEfier)* package,
-we start R and enter:
+islets isolated from five C57BL/6 and ICR mice.
+
+## Getting started
+
+To install *[iSEEfier](https://bioconductor.org/packages/3.24/iSEEfier)*
+package, we start R and enter:
 
 ``` r
 
@@ -84,8 +86,8 @@ Let’s add the normalized counts
 
 ``` r
 
-library("scuttle")
-sce <- logNormCounts(sce)
+library("scrapper")
+sce <- normalizeRnaCounts.se(sce)
 ```
 
 Now we can add different dimensionality reduction coordinates
@@ -313,9 +315,9 @@ g1 <- view_initial_network(initial1, plot_format = "igraph")
 ``` r
 
 g1
-#> IGRAPH fd1451c DN-- 11 3 -- 
+#> IGRAPH 67a36f5 DN-- 11 3 -- 
 #> + attr: name (v/c), color (v/c)
-#> + edges from fd1451c (vertex names):
+#> + edges from 67a36f5 (vertex names):
 #> [1] ReducedDimensionPlot1->ColumnDataPlot1  
 #> [2] ReducedDimensionPlot2->ColumnDataPlot1  
 #> [3] ReducedDimensionPlot3->FeatureAssayPlot3
@@ -378,7 +380,7 @@ the user has access to the following:
 ``` r
 
 sessionInfo()
-#> R version 4.6.0 (2026-04-24)
+#> R version 4.6.1 (2026-06-24)
 #> Platform: aarch64-apple-darwin23
 #> Running under: macOS Sequoia 15.7.2
 #> 
@@ -397,69 +399,69 @@ sessionInfo()
 #> [8] base     
 #> 
 #> other attached packages:
-#>  [1] visNetwork_2.1.4            igraph_2.3.1               
-#>  [3] scater_1.41.1               ggplot2_4.0.3              
-#>  [5] scuttle_1.21.6              scRNAseq_2.27.0            
-#>  [7] SingleCellExperiment_1.35.0 SummarizedExperiment_1.43.0
-#>  [9] Biobase_2.73.1              GenomicRanges_1.65.0       
-#> [11] Seqinfo_1.3.0               IRanges_2.45.0             
-#> [13] S4Vectors_0.51.1            BiocGenerics_0.59.0        
-#> [15] generics_0.1.4              MatrixGenerics_1.25.0      
-#> [17] matrixStats_1.5.0           iSEEfier_1.9.0             
-#> [19] BiocStyle_2.41.0           
+#>  [1] visNetwork_2.1.4            igraph_2.3.3               
+#>  [3] scater_1.41.2               ggplot2_4.0.3              
+#>  [5] scuttle_1.23.2              scrapper_1.7.9             
+#>  [7] scRNAseq_2.27.0             SingleCellExperiment_1.35.2
+#>  [9] SummarizedExperiment_1.43.0 Biobase_2.73.2             
+#> [11] GenomicRanges_1.65.4        Seqinfo_1.3.2              
+#> [13] IRanges_2.47.5              S4Vectors_0.51.10          
+#> [15] BiocGenerics_0.59.12        generics_0.1.4             
+#> [17] MatrixGenerics_1.25.0       matrixStats_1.5.0          
+#> [19] iSEEfier_1.9.1              BiocStyle_2.41.0           
 #> 
 #> loaded via a namespace (and not attached):
-#>   [1] splines_4.6.0            later_1.4.8              BiocIO_1.23.3           
-#>   [4] bitops_1.0-9             filelock_1.0.3           tibble_3.3.1            
-#>   [7] XML_3.99-0.23            lifecycle_1.0.5          httr2_1.2.2             
-#>  [10] doParallel_1.0.17        lattice_0.22-9           ensembldb_2.37.0        
-#>  [13] alabaster.base_1.13.0    magrittr_2.0.5           sass_0.4.10             
-#>  [16] rmarkdown_2.31           jquerylib_0.1.4          yaml_2.3.12             
+#>   [1] splines_4.6.1            later_1.4.8              BiocIO_1.23.3           
+#>   [4] bitops_1.1-0             filelock_1.0.3           tibble_3.3.1            
+#>   [7] XML_3.99-0.24            lifecycle_1.0.5          httr2_1.3.0             
+#>  [10] doParallel_1.0.17        lattice_0.23-1           ensembldb_2.37.3        
+#>  [13] alabaster.base_1.13.4    magrittr_2.0.5           sass_0.4.10             
+#>  [16] rmarkdown_2.32           jquerylib_0.1.4          yaml_2.3.12             
 #>  [19] httpuv_1.6.17            otel_0.2.0               DBI_1.3.0               
 #>  [22] RColorBrewer_1.1-3       abind_1.4-8              Rtsne_0.17              
-#>  [25] AnnotationFilter_1.37.0  RCurl_1.98-1.18          rappdirs_0.3.4          
+#>  [25] AnnotationFilter_1.37.0  RCurl_1.98-1.20          rappdirs_0.3.4          
 #>  [28] circlize_0.4.18          ggrepel_0.9.8            irlba_2.3.7             
-#>  [31] alabaster.sce_1.13.0     RSpectra_0.16-2          pkgdown_2.2.0           
-#>  [34] iSEEhex_1.15.0           codetools_0.2-20         DelayedArray_0.39.1     
+#>  [31] alabaster.sce_1.13.1     RSpectra_0.16-2          pkgdown_2.2.1           
+#>  [34] iSEEhex_1.15.0           codetools_0.2-20         DelayedArray_0.39.6     
 #>  [37] DT_0.34.0                tidyselect_1.2.1         shape_1.4.6.1           
 #>  [40] UCSC.utils_1.9.0         farver_2.1.2             viridis_0.6.5           
 #>  [43] ScaledMatrix_1.21.0      shinyWidgets_0.9.1       BiocFileCache_3.3.0     
-#>  [46] GenomicAlignments_1.49.0 jsonlite_2.0.0           BiocNeighbors_2.7.1     
-#>  [49] GetoptLong_1.1.1         iterators_1.0.14         systemfonts_1.3.2       
-#>  [52] foreach_1.5.2            tools_4.6.0              ragg_1.5.2              
-#>  [55] Rcpp_1.1.1-1.1           glue_1.8.1               gridExtra_2.3           
-#>  [58] SparseArray_1.11.13      BiocBaseUtils_1.15.0     xfun_0.57               
-#>  [61] mgcv_1.9-4               GenomeInfoDb_1.49.0      dplyr_1.2.1             
-#>  [64] HDF5Array_1.41.0         gypsum_1.9.0             shinydashboard_0.7.3    
-#>  [67] withr_3.0.2              BiocManager_1.30.27      fastmap_1.2.0           
-#>  [70] rhdf5filters_1.25.0      shinyjs_2.1.1            rsvd_1.0.5              
+#>  [46] GenomicAlignments_1.49.2 jsonlite_2.0.0           GetoptLong_1.1.1        
+#>  [49] BiocNeighbors_2.7.3      iterators_1.0.14         systemfonts_1.3.2       
+#>  [52] foreach_1.5.2            tools_4.6.1              ragg_1.5.2              
+#>  [55] Rcpp_1.1.2               glue_1.8.1               gridExtra_2.3.1         
+#>  [58] SparseArray_1.13.2       BiocBaseUtils_1.15.1     xfun_0.61               
+#>  [61] mgcv_1.9-4               GenomeInfoDb_1.49.1      dplyr_1.2.1             
+#>  [64] HDF5Array_1.41.3         gypsum_1.9.0             withr_3.0.3             
+#>  [67] shinydashboard_0.7.3     BiocManager_1.30.27      fastmap_1.2.0           
+#>  [70] rhdf5filters_1.25.4      shinyjs_2.1.1            rsvd_1.0.5              
 #>  [73] digest_0.6.39            R6_2.6.1                 mime_0.13               
-#>  [76] textshaping_1.0.5        colorspace_2.1-2         listviewer_4.0.0        
-#>  [79] dichromat_2.0-0.1        RSQLite_3.52.0           cigarillo_1.3.0         
-#>  [82] h5mread_1.5.0            hexbin_1.28.5            FNN_1.1.4.1             
-#>  [85] rtracklayer_1.73.0       httr_1.4.8               htmlwidgets_1.6.4       
-#>  [88] S4Arrays_1.13.0          org.Mm.eg.db_3.23.0      uwot_0.2.4              
-#>  [91] iSEE_2.25.0              pkgconfig_2.0.3          gtable_0.3.6            
+#>  [76] textshaping_1.0.5        colorspace_2.1-3         listviewer_4.0.0        
+#>  [79] dichromat_2.0-1          RSQLite_3.53.3           cigarillo_1.3.1         
+#>  [82] h5mread_1.5.3            hexbin_1.28.6            FNN_1.1.4.1             
+#>  [85] rtracklayer_1.73.0       httr_1.4.9               htmlwidgets_1.6.4       
+#>  [88] S4Arrays_1.13.0          org.Mm.eg.db_3.23.0      uwot_0.2.5              
+#>  [91] iSEE_2.25.1              pkgconfig_2.0.3          gtable_0.3.6            
 #>  [94] blob_1.3.0               ComplexHeatmap_2.29.0    S7_0.2.2                
-#>  [97] XVector_0.53.0           htmltools_0.5.9          bookdown_0.46           
+#>  [97] XVector_0.53.0           htmltools_0.5.9          bookdown_0.48           
 #> [100] ProtGenerics_1.45.0      rintrojs_0.3.4           clue_0.3-68             
-#> [103] scales_1.4.0             alabaster.matrix_1.13.0  png_0.1-9               
-#> [106] knitr_1.51               rstudioapi_0.18.0        rjson_0.2.23            
-#> [109] nlme_3.1-169             curl_7.1.0               shinyAce_0.4.4          
-#> [112] cachem_1.1.0             rhdf5_2.57.0             GlobalOptions_0.1.4     
-#> [115] BiocVersion_3.24.0       parallel_4.6.0           miniUI_0.1.2            
-#> [118] vipor_0.4.7              AnnotationDbi_1.75.0     restfulr_0.0.16         
-#> [121] desc_1.4.3               pillar_1.11.1            grid_4.6.0              
+#> [103] scales_1.4.0             alabaster.matrix_1.13.2  png_0.1-9               
+#> [106] knitr_1.52               rstudioapi_0.19.0        rjson_0.2.23            
+#> [109] nlme_3.1-171             curl_8.0.0               shinyAce_0.4.4          
+#> [112] cachem_1.1.0             rhdf5_2.57.17            GlobalOptions_0.1.4     
+#> [115] BiocVersion_3.24.0       parallel_4.6.1           miniUI_0.1.2            
+#> [118] vipor_0.4.7              AnnotationDbi_1.75.2     restfulr_0.0.17         
+#> [121] desc_1.4.3               pillar_1.11.1            grid_4.6.1              
 #> [124] alabaster.schemas_1.13.0 vctrs_0.7.3              promises_1.5.0          
-#> [127] BiocSingular_1.29.0      dbplyr_2.5.2             iSEEu_1.25.0            
-#> [130] beachmat_2.29.0          xtable_1.8-8             cluster_2.1.8.2         
+#> [127] BiocSingular_1.29.1      dbplyr_2.6.0             iSEEu_1.25.0            
+#> [130] beachmat_2.29.2          xtable_1.8-8             cluster_2.1.8.3         
 #> [133] beeswarm_0.4.0           evaluate_1.0.5           GenomicFeatures_1.65.0  
-#> [136] cli_3.6.6                compiler_4.6.0           Rsamtools_2.29.0        
-#> [139] rlang_1.2.0              crayon_1.5.3             ggbeeswarm_0.7.3        
-#> [142] fs_2.1.0                 viridisLite_0.4.3        alabaster.se_1.13.0     
-#> [145] BiocParallel_1.47.0      Biostrings_2.81.1        lazyeval_0.2.3          
-#> [148] colourpicker_1.3.0       Matrix_1.7-5             ExperimentHub_3.3.0     
-#> [151] bit64_4.8.0              Rhdf5lib_2.1.0           KEGGREST_1.53.0         
-#> [154] shiny_1.13.0             alabaster.ranges_1.13.0  AnnotationHub_4.1.0     
-#> [157] memoise_2.0.1            bslib_0.10.0             bit_4.6.0
+#> [136] cli_3.6.6                compiler_4.6.1           Rsamtools_2.29.0        
+#> [139] rlang_1.3.0              crayon_1.5.3             ggbeeswarm_0.7.3        
+#> [142] fs_2.1.0                 viridisLite_0.4.3        alabaster.se_1.13.1     
+#> [145] BiocParallel_1.47.0      Biostrings_2.81.9        lazyeval_0.2.3          
+#> [148] colourpicker_1.3.0       Matrix_1.7-6             ExperimentHub_3.3.2     
+#> [151] bit64_4.8.6              Rhdf5lib_2.1.0           KEGGREST_1.53.6         
+#> [154] shiny_1.14.0             alabaster.ranges_1.13.1  AnnotationHub_4.3.2     
+#> [157] memoise_2.0.1            bslib_0.12.0             bit_4.6.0
 ```

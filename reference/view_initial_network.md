@@ -51,19 +51,9 @@ the [`iSEEinit()`](iSEEinit.md) provided in this package.
 ``` r
 ## Load a dataset and preprocess this quickly
 sce <- scRNAseq::RichardTCellData()
-#> snapshotDate(): 2026-07-24
-#> Error while performing HEAD request.
-#>    Proceeding without cache information.
+#> snapshotDate(): 2026-09-18
 #> loading from cache
-#> Error while performing HEAD request.
-#>    Proceeding without cache information.
-sce <- scuttle::logNormCounts(sce)
-#> Warning: 'librarySizeFactors' is deprecated.
-#> Use 'scrapper::centerSizeFactors' instead.
-#> See help("Deprecated")
-#> Warning: 'normalizeCounts' is deprecated.
-#> Use 'scrapper::normalizeCounts' instead.
-#> See help("Deprecated")
+sce <- scrapper::normalizeRnaCounts.se(sce)
 sce <- scater::runPCA(sce)
 sce <- scater::runTSNE(sce)
 ## Select some features and aspects to focus on
@@ -78,18 +68,18 @@ initial <- iSEEinit(sce = sce,
 g_init <- view_initial_network(initial)
 
 g_init
-#> IGRAPH 85adfa7 DN-- 13 4 -- 
+#> IGRAPH 0b60bea DN-- 13 4 -- 
 #> + attr: name (v/c), color (v/c)
-#> + edges from 85adfa7 (vertex names):
+#> + edges from 0b60bea (vertex names):
 #> [1] ReducedDimensionPlot1->ColumnDataPlot1  
 #> [2] ReducedDimensionPlot2->ColumnDataPlot1  
 #> [3] ReducedDimensionPlot3->ColumnDataPlot1  
 #> [4] ReducedDimensionPlot4->FeatureAssayPlot4
 
 view_initial_network(initial, plot_format = "visNetwork")
-#> IGRAPH 646a90d DN-- 13 4 -- 
+#> IGRAPH 9b86119 DN-- 13 4 -- 
 #> + attr: name (v/c), color (v/c)
-#> + edges from 646a90d (vertex names):
+#> + edges from 9b86119 (vertex names):
 #> [1] ReducedDimensionPlot1->ColumnDataPlot1  
 #> [2] ReducedDimensionPlot2->ColumnDataPlot1  
 #> [3] ReducedDimensionPlot3->ColumnDataPlot1  

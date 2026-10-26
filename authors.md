@@ -14,13 +14,13 @@ Source:
 [`DESCRIPTION`](https://github.com/NajlaAbassi/iSEEfier/blob/HEAD/DESCRIPTION)
 
 Abassi N, Marini F (2026). *iSEEfier: Streamlining the creation of
-initial states for starting an iSEE instance*. R package version 1.9.0,
+initial states for starting an iSEE instance*. R package version 1.9.1,
 <https://github.com/NajlaAbassi/iSEEfier>.
 
     @Manual{,
       title = {iSEEfier: Streamlining the creation of initial states for starting an iSEE instance},
       author = {Najla Abassi and Federico Marini},
       year = {2026},
-      note = {R package version 1.9.0},
+      note = {R package version 1.9.1},
       url = {https://github.com/NajlaAbassi/iSEEfier},
     }
