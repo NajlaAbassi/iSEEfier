@@ -51,4 +51,4 @@ URL: https://github.com/NajlaAbassi/iSEEfier
 BugReports: https://github.com/NajlaAbassi/iSEEfier/issues
 Config/testthat/edition: 3
 VignetteBuilder: knitr
-Config/roxygen2/version: 8.1.0
+Config/roxygen2/version: 8.1.1
